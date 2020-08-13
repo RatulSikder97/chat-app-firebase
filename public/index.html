@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="/__/firebase/7.17.2/firebase-app.js"></script>
+
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="/__/firebase/7.17.2/firebase-analytics.js"></script>
+     <script src="/__/firebase/7.17.2/firebase-firestore.js"></script>
+    <title>RS-CHAT</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <ul id="msg-list">
+
+        </ul>
+        <form id="msg-form" method="POST">
+            <input type="text" name="msg-text" id="msg-text" placeholder="Enter your message...">
+            <button type="submit" id="send" class="btn">SEND</button>
+        </form>
+    </div>
+
+
+
+    <!-- js section -->
+   
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+    <script>
+        const db = firebase.firestore();
+        db.settings({timestampsInSnapshots : true});
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
